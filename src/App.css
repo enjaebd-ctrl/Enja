@@ -1,0 +1,402 @@
+.weather-app {
+  max-width: 1216px;
+  margin: 0 auto;
+  padding: 48px 24px 24px;
+}
+
+/* Små ikoner (bruges i toppen og i de fire kort) */
+.small-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Toppen med logo */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-image {
+  width: 48px;
+  height: 48px;
+}
+
+.logo-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.logo-subtitle {
+  margin-top: 2px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #7a8db0;
+}
+
+.header-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #4a5f85;
+}
+
+.header-badge-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e3ecfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overskrift og tekst */
+.hero {
+  margin: 36px 0 28px;
+}
+
+.hero-title {
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.hero-text {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #6c7f9f;
+}
+
+/* Søgefeltet */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px 8px 22px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(40, 80, 160, 0.08);
+}
+
+/* Forstørrelsesglasset i søgefeltet */
+.search-icon-grey {
+  width: 22px;
+  height: 22px;
+}
+
+/* Forstørrelsesglasset på knappen (samme billede, men gjort hvidt) */
+.search-icon-white {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #1a2b4a;
+  background: transparent;
+}
+
+.search-input::placeholder {
+  color: #8fa0bd;
+}
+
+.search-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  background: #2458c6;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background: #1c47a3;
+}
+
+.status-message {
+  margin-top: 20px;
+  color: #6c7f9f;
+}
+
+.error-message {
+  margin-top: 20px;
+  color: #c0392b;
+}
+
+/* Overskrift over det store kort */
+.section-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 36px 0 16px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.updated-label {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #7a8db0;
+}
+
+.green-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #3ec28f;
+}
+
+/* Det store blå kort */
+.current-weather-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  gap: 20px;
+  padding: 44px;
+  border-radius: 28px;
+  color: white;
+  background: linear-gradient(135deg, #2457c5, #4a82e6);
+  box-shadow: 0 12px 30px rgba(36, 87, 197, 0.25);
+}
+
+/* To pynteringe i baggrunden */
+.current-weather-card::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: 40px;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.current-weather-card::after {
+  content: "";
+  position: absolute;
+  bottom: -160px;
+  right: -60px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.current-weather-left,
+.current-weather-middle,
+.current-weather-right {
+  position: relative;
+  z-index: 1;
+}
+
+.current-country {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.current-city {
+  margin-top: 8px;
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.current-date {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.current-temperature {
+  margin-top: 12px;
+  font-size: 88px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.current-description {
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.current-source {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.current-weather-middle {
+  align-self: end;
+}
+
+.current-small-label {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.current-feels-like {
+  font-size: 22px;
+}
+
+.current-weather-right {
+  align-self: center;
+}
+
+.current-weather-icon {
+  width: 170px;
+  height: 170px;
+}
+
+.sky-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.sky-text {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Vejrforhold */
+.details-title {
+  margin-top: 44px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.details-subtitle {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #7a8db0;
+}
+
+.detail-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  margin-top: 20px;
+}
+
+.detail-card {
+  padding: 24px;
+  border-radius: 22px;
+  background: white;
+  box-shadow: 0 6px 24px rgba(40, 80, 160, 0.07);
+}
+
+.detail-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-icon-orange {
+  background: #fff1dc;
+}
+
+.detail-icon-blue {
+  background: #e6f0ff;
+}
+
+.detail-icon-green {
+  background: #e0f6ee;
+}
+
+.detail-icon-purple {
+  background: #efe9ff;
+}
+
+.detail-label {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #8091ae;
+}
+
+.detail-value {
+  margin-top: 22px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.detail-unit {
+  font-size: 15px;
+}
+
+.detail-note {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #8091ae;
+}
+
+/* Bunden */
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  font-size: 12px;
+  color: #9aa9c4;
+}
+
+/* Mindre skærme */
+@media (max-width: 900px) {
+  .current-weather-card {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .detail-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .search-button {
+    padding: 12px 16px;
+  }
+
+  .page-footer {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
