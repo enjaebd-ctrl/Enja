@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  color: #4a1d36;
+  background: linear-gradient(180deg, #fff8fb, #fde7f1);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+/* Den store lyse cirkel i øverste højre hjørne */
+body::before {
+  content: "";
+  position: fixed;
+  top: -220px;
+  right: -160px;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background: rgba(236, 72, 153, 0.08);
+  z-index: -1;
+}
